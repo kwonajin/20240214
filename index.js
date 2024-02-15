@@ -1,4 +1,4 @@
-const Input = require('./userInput');
+const Input = require('./modules/userInput');
 let mysql = require('mysql');
 
 let connection = mysql.createConnection({
