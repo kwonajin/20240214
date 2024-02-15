@@ -41,24 +41,8 @@ async function product(connection) {
 
     .then(async (menu) => {
       let sql2 = `insert into bag values(null,'a',${productInfo[menu - 1].id})`;
-      let sql3 = `select productName from bag,product 
-  where bag.productID = product.productID`;
       connection.query(sql2, (error, results, fields) => {
         if (error) return console.error(error.message);
-
-        connection.query(sql3, (error, results, fields) => {
-          if (error) return console.error(error.message);
-
-          console.log(`-------장바구니에 담긴 상품 리스트-------`);
-          const bagList = [];
-
-          for (data of results) {
-            const obj = {};
-            obj.name = data.productName;
-            bagList.push(obj);
-          }
-          console.table(bagList);
-        });
       });
     });
 }

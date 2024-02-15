@@ -31,7 +31,6 @@ async function signUp(connection) {
                 values('${userID}','${userName}','${userPassword}','${userContact}','${userAddress}')`;
 
     run.runSql(connection, sql).then((result) => {
-      console.log(result);
       console.log(`회원가입이 완료되었습니다.`);
     });
   } else if (rep === "2") {
