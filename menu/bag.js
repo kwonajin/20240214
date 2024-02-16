@@ -42,7 +42,7 @@ async function main() {
       bagProductNames.forEach((productName, index) => {
         // 번호와 상품명 출력
         const num = (index + 1).toString().padStart(6);
-        const name = productName.padEnd(14);
+        const name = productName.padEnd(15);
         console.log(`║ ${num} ║ ${name}  ║`);
       });
 
@@ -112,9 +112,9 @@ async function main() {
     console.log("║ 번호 ║       상품명       ║");
     console.log("╚══════╩════════════════════╝");
     cartList.forEach((product, index) => {
-      const paddedIndex = (index + 1).toString().padStart(6, ' ');
-      const paddedProduct = product.padEnd(10, ' ');
-      console.log(`║ ${paddedIndex} ║ ${paddedProduct}  ║`);
+      const paddedIndex = (index + 1).toString().padStart(4);
+      const paddedProduct = product.padEnd(16);
+      console.log(`║ ${paddedIndex} ║ ${paddedProduct} ║`);
     });
     console.log("╚══════╩════════════════════╝");
 

@@ -9,6 +9,7 @@ const login = require("./menu/login");
 const product = require("./menu/product");
 const location = require("./menu/location");
 const bag = require("./menu/bag");
+const mypage = require("./menu/mypage");
 
 /* wait */
 const wait = (timeToDelay) =>
@@ -50,6 +51,9 @@ async function main() {
       await wait(3000);
     } else if (menu === "4") {
       await bag.main();
+    } else if (menu === '5') {
+      await mypage.mypage(connection);
+      await wait(3000);
     } else if (menu === "6") {
       console.log("이용해주셔서 감사합니다.");
       process.exit();
